@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
  
 
-
   # Routes for the Movie resource:
 
   # CREATE
