@@ -13,4 +13,11 @@
 #  director_id :integer
 #
 class Movie < ApplicationRecord
+
+  belongs_to(:director, {
+    :class_name => "Director",
+    :foreign_key => "director_id",
+    :required => true
+  })
+
 end
