@@ -10,6 +10,8 @@
 #  movie_id   :integer
 #
 class Character < ApplicationRecord
+    
+    validates(:name, {:presence => true})
 
     belongs_to(:movie, {
       :class_name => "Movie",
