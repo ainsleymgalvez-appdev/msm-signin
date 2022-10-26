@@ -24,11 +24,19 @@
       </div>
 
       <div>
-        <label for="description_box">
-          Description
+        <label for="year_box">
+          Year
         </label>
 
-        <textarea id="description_box" name="query_description" rows="3"></textarea>
+        <input type="text" id="year_box" name="query_year">
+      </div>
+
+      <div>
+        <label for="duration_box">
+          Duration
+        </label>
+
+        <input type="text" id="duration_box" name="query_duration">
       </div>
 
       <div>
@@ -37,6 +45,22 @@
         </label>
 
         <input type="text" id="director_id_box" name="query_director_id">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
       </div>
 
       <button>
@@ -60,11 +84,23 @@
         </th>
 
         <th>
-          Description
+          Year
+        </th>
+
+        <th>
+          Duration
         </th>
 
         <th>
           Director
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Image
         </th>
 
         <th>
@@ -90,11 +126,23 @@
         </td>
 
         <td>
-          <%= a_movie.description %>
+          <%= a_movie.year %>
+        </td>
+
+        <td>
+          <%= a_movie.duration %>
         </td>
 
         <td>
           <%= a_movie.director_id %>
+        </td>
+
+        <td>
+          <%= a_movie.description %>
+        </td>
+
+        <td>
+          <%= a_movie.image %>
         </td>
 
         <td>
