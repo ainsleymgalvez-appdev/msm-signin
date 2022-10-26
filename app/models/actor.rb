@@ -15,6 +15,7 @@ class Actor < ApplicationRecord
   has_many(:filmography, {
     :through => :characters,
     :source => :movie
+  })
 
     has_many(:characters, {
       :class_name => "Character",
