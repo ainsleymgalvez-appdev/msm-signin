@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
  
+  # HOMEPAGE
+
+  get("/", {:controller => "application", :action => "index"})
 
   # Routes for the Bookmark resource:
 
