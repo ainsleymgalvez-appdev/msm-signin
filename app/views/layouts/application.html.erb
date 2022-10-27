@@ -21,6 +21,35 @@
       <li><a href="/directors">Directors</a></li>
       <li><a href="/actors">Actors</a></li>
       <li><a href="/characters">Character</a></li>
+
+      <br>
+      <br>
+      <% @sign_in_id = session.fetch(:user_id) %>
+      <% if @sign_in_id == nil %>
+      <li>
+            <a href="/user_sign_in">
+              Sign in
+            </a>
+          </li>
+          <li>
+            <a href="/user_sign_up">
+              Sign up
+            </a>
+          </li>
+
+      <% else %>
+      <li>
+            <a href="/user_sign_out">
+              Sign out
+            </a>
+          </li>
+          <li>
+            <a href="/bookmarks">
+              My bookmarks
+            </a>
+          </li> 
+      <% end %>
+      <li><a href="/">Home</a></li>
     </ul>
     <%= yield %>
   </body>
