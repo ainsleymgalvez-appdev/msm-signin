@@ -19,4 +19,6 @@ class Character < ApplicationRecord
       :required => true
     })
 
+    has_many :cast, :through => :actor, :source => :movie
+
 end

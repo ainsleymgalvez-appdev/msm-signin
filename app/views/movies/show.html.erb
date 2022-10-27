@@ -19,6 +19,33 @@
       </div>
     </div>
 
+<% current_user_bookmarks = Bookmark.where({ :movie_id => @the_movie.id, :user_id => session.fetch(:user_id) }) %>
+
+<!--COULDN'T WE DEFINE ABOVE IN MODELS FOLDER??-->
+
+<% the_bookmark = current_user_bookmarks.at(0) %> 
+
+<% user_sign_in = session.fetch(:user_id) %>
+
+<%# if current_user_bookmarks.count == nil %>
+<% if user_sign_in != nil %>
+
+ <% if the_bookmark == nil %>
+
+ <hr>
+    <form action="/insert_bookmark" method="post">
+      <input type="hidden" value="<%=@the_movie.id%>" id="movie_id_box" name="query_movie_id" class="form-control">
+
+      <button class="btn btn-block btn-outline-secondary">
+        Bookmark this movie!
+      </button>
+    </form>
+    <% else %>
+    
+    <a href= "/delete_bookmark/<%= the_bookmark.id %>">Un-bookmark</a>
+<% end %>
+<% end %>
+
     <dl>
       <dt>
         Title
@@ -45,7 +72,7 @@
         Director
       </dt>
       <dd>
-        <%= @the_movie.director_id %>
+        <%= @the_movie.director.name %>
       </dd>
 
       <dt>

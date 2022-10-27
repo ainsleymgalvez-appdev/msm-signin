@@ -17,14 +17,7 @@
   <body>
 
     <ul>
-      <li><a href="/movies">Movies</a></li>
-      <li><a href="/directors">Directors</a></li>
-      <li><a href="/actors">Actors</a></li>
-      <li><a href="/characters">Character</a></li>
-
-      <br>
-      <br>
-      <% if session.fetch(:user_id) == nil %>
+      <% if @current_user == nil %>
       <li>
             <a href="/user_sign_in">
               Sign in
