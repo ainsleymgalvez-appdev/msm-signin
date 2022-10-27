@@ -1,28 +1,5 @@
 Rails.application.routes.draw do
  
-  # HOMEPAGE
-
-  get("/", {:controller => "application", :action => "index"})
-
-  # Routes for the Bookmark resource:
-
-  # CREATE
-  post("/insert_bookmark", { :controller => "bookmarks", :action => "create" })
-          
-  # READ
-  get("/bookmarks", { :controller => "bookmarks", :action => "index" })
-  
-  get("/bookmarks/:path_id", { :controller => "bookmarks", :action => "show" })
-  
-  # UPDATE
-  
-  post("/modify_bookmark/:path_id", { :controller => "bookmarks", :action => "update" })
-  
-  # DELETE
-  get("/delete_bookmark/:path_id", { :controller => "bookmarks", :action => "destroy" })
-
-  #------------------------------
-
   # Routes for the User account:
 
   # SIGN UP FORM
@@ -39,6 +16,20 @@ Rails.application.routes.draw do
   get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
 
   # ------------------------------
+
+  # SIGN IN FORM
+  get("/user_sign_in", { :controller => "user_authentication", :action => "sign_in_form" })
+  # AUTHENTICATE AND STORE COOKIE
+  post("/user_verify_credentials", { :controller => "user_authentication", :action => "create_cookie" })
+  
+  # SIGN OUT        
+  get("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
+             
+  #------------------------------
+
+  # HOMEPAGE
+
+  get("/", {:controller => "application", :action => "index"})
 
   # SIGN IN FORM
   get("/user_sign_in", { :controller => "user_authentication", :action => "sign_in_form" })

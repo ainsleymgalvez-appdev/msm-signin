@@ -10,20 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_26_203545) do
+ActiveRecord::Schema.define(version: 2022_10_27_024226) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
     t.date "dob"
     t.text "bio"
     t.string "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "bookmarks", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,10 +50,10 @@ ActiveRecord::Schema.define(version: 2022_10_26_203545) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
+    t.string "password_digest"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
